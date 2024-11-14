@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: thanak81-deployblog-certificate
+  namespace: thanak81-deployblog
+spec:
+  secretName: thanak81-deployblog-secret-tls
+  commonName: thanak81-deployblog.assessify.org
+  dnsNames:
+  - thanak81-deployblog.assessify.org
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
